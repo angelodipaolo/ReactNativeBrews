@@ -13,7 +13,7 @@ A very simple demonstration of a React Native iOS app for viewing and adding tas
 
 See [React Native - Getting Started](https://facebook.github.io/react-native/docs/getting-started.html#content) for general information on setting up React Native.
 
-1. Get started by cloning this repo and running `npm install` in the cloned directory.
+Get started by cloning this repo and running `npm install` in the cloned directory.
 
 ```
 git clone git@github.com:angelodipaolo/ReactNativeBrews.git
@@ -21,7 +21,7 @@ cd ReactNativeBrews
 npm install
 ```
 
-2. Open `/ios/ReactNativeBrews.xcodeproj` and run the simulator.
+Open `/ios/ReactNativeBrews.xcodeproj` and run the simulator.
 
 ## Overview
 
