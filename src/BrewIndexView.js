@@ -4,10 +4,11 @@ var {
   View,
   ListView,
   Navigator,
+  TouchableHighlight
 } = React;
 
 var styles = require('./styles').styleSheet;
-var BREW_API_BASE_URL = "http://localhost:8000"
+var BREW_API_BASE_URL = "https://brewhapi.herokuapp.com"
 var BrewDetailView = require('./BrewDetailView')
 
 class BrewIndexView extends React.Component {
@@ -41,6 +42,7 @@ class BrewIndexView extends React.Component {
                         .dataSource
                         .cloneWithRows(responseData.brews),
           loaded: true,
+          brews: responseData.brews
         });
       })
       .done();
@@ -48,10 +50,11 @@ class BrewIndexView extends React.Component {
 
   // MARK: Actions
 
-  onBrewTapped() {
+  onBrewTapped(brew) {
     this.props.navigator.push({
-        title: 'BrewDetailView',
-        component: BrewDetailView
+        title: brew.name,
+        component: BrewDetailView,
+        passProps: {brew: brew}
     });
   }
 
@@ -60,7 +63,7 @@ class BrewIndexView extends React.Component {
   render() {
     if (!this.state.loaded) {
       return (
-        <View style={styles.container}>
+        <View>
           <Text style={styles.welcome, styles.text}>
             Fetching brews...
           </Text>
@@ -72,17 +75,20 @@ class BrewIndexView extends React.Component {
       <View>
         <ListView
           dataSource={this.state.dataSource}
-          renderRow={this.renderBrew.bind(this)}
+          renderRow={this.renderBrewRow.bind(this)}
           style={styles.listView} />
       </View>
     )
   }
 
-  renderBrew(brew) {
+  renderBrewRow(brew, sectionID, rowID) {
     return (
-      <View style={styles.brew}>
-        <Text style={styles.brewName} onPress={this.onBrewTapped.bind(this)}>{brew.name}</Text>
-      </View>
+      <TouchableHighlight onPress={this.onBrewTapped.bind(this, brew)}>
+        <View style={styles.brewRow}>
+          <Text style={styles.brewName}>{brew.name}</Text>
+          <Text style={styles.brewStyle}>{brew.style}</Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 }

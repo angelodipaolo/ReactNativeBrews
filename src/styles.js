@@ -22,15 +22,25 @@ exports.styleSheet = StyleSheet.create({
   text: {
     color: "#FFFFFF",
   },
-  brew: {
-    height: 44,
-    borderBottomWidth: 0.5
+  brewRow: {
+    height: 54,
+    borderBottomWidth: 0.5,
+    marginLeft: 15
   },
   brewName: {
     fontSize: 18,
     textAlign: 'left',
     color: "#000000",
-    marginLeft: 15,
     paddingTop: 8,
+  },
+  brewStyle: {
+    textAlign: 'left',
+    paddingTop: 2,
+    color: "#696969"
+  },
+  brewDetails: {
+    padding: 15,
+    marginTop: 80,
+    fontSize:20
   }
 })
