@@ -9,10 +9,13 @@ var {
 var styles = require('./styles').styleSheet;
 
 class BrewDetailView extends React.Component {
+
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Brew Details</Text>
+      <View style={styles.brewDetails}>
+        <Text style={styles.brewStyle}>{this.props.brew.style}</Text>
+        <Text>Brewed by: {this.props.brew.brewery.name}</Text>
+        <Text>{this.props.brew.brewery.location}</Text>
       </View>
     );
   }
