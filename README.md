@@ -6,11 +6,9 @@ A ridiculously simple React Native demo app for viewing and adding tasty brews. 
 
 ## Project Overview
 
-- `/src/ReactNativeBrewsApp.js` - A react component that declares a navigator with brew index as the initial route. 
+- [`/src/ReactNativeBrewsApp.js`](/src/ReactNativeBrewsApp.js) - A react component that declares a navigator with brew index as the initial route. 
 - `/src/views` - React components representing each view in the app. Each component is basically analogous with `UIViewController`.
-  - `BrewIndexView.js` - Renders a list of brews that can be tapped to view details. 
-  - `BrewDetailView.js` - Renders the details of a brew.
-  - `BrewAddView.js` - Renders text fields and buttons for inserting a brew.
-- `/src/http/` - HTTP client for fetching and inserting brew data with brew API server.
-
-
+  - [`BrewIndexView.js`](/src/views/BrewIndexView.js) - Renders a list of brews that can be tapped to view details. 
+  - [`BrewDetailView.js`](/src/views/BrewDetailView.js) - Renders the details of a brew.
+  - [`BrewAddView.js`](/src/views/BrewAddView.js) - Renders text fields and buttons for inserting a brew.
+- [`/src/http/BrewClient`](/src/http/BrewClient.js) - HTTP client for fetching and inserting brew data with brew API server.
