@@ -1,13 +1,15 @@
-var React = require('react-native');
+"use strict";
+
+var React = require("react-native");
 var {
-  StyleSheet,
   Text,
   View,
   Navigator,
 } = React;
 
-var styles = require('./styles').styleSheet;
+var styles = require("../styles").styleSheet;
 
+/// Renders the detail of a brew
 class BrewDetailView extends React.Component {
 
   render() {

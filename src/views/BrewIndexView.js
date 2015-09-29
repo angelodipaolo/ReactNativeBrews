@@ -1,16 +1,16 @@
+"use strict";
+
 var React = require('react-native');
 var {
   Text,
   View,
   ListView,
-  Navigator,
   TouchableHighlight
 } = React;
 
-var styles = require('./styles').styleSheet;
-var BREW_API_BASE_URL = "https://brewhapi.herokuapp.com"
-var BrewDetailView = require('./BrewDetailView')
+var styles = require("../styles").styleSheet;
 
+/// A view for rendering a list of brews
 class BrewIndexView extends React.Component {
 
   // MARK: Initialization
@@ -19,6 +19,7 @@ class BrewIndexView extends React.Component {
     super(props);
 
     this.state = {
+      brewClient: props.brewClient,
       dataSource: new ListView.DataSource({
         rowHasChanged: (row1, row2) => row1 !== row2,
       }),
@@ -33,19 +34,18 @@ class BrewIndexView extends React.Component {
   // MARK: Fetching Data
 
   fetchBrews() {
-    fetch(BREW_API_BASE_URL+'/brews')
-      .then((response) => response.json())
-      .then((responseData) => {
-        this.setState({
+    var brewClient = this.state.brewClient
+
+    brewClient.fetchBrews((brews) => {
+      this.setState({
           dataSource: this
                         .state
                         .dataSource
-                        .cloneWithRows(responseData.brews),
+                        .cloneWithRows(brews),
           loaded: true,
-          brews: responseData.brews
+          brews: brews
         });
-      })
-      .done();
+    })
   }
 
   // MARK: Actions
@@ -53,7 +53,7 @@ class BrewIndexView extends React.Component {
   onBrewTapped(brew) {
     this.props.navigator.push({
         title: brew.name,
-        component: BrewDetailView,
+        component: require("./BrewDetailView"),
         passProps: {brew: brew}
     });
   }
