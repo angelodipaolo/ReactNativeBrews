@@ -1,6 +1,4 @@
 
 # ReactNativeBrews
 
-A simple demonstration and academic exercise of React Native.
-
-
+A ridiculously simple React Native demo app. Uses [https://brewhapi.herokuapp.com/brews](https://brewhapi.herokuapp.com/brews) as a mock API for fetching data.
