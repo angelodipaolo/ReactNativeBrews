@@ -1,7 +1,7 @@
 
 # ReactNativeBrews
 
-A ridiculously simple React Native demo app for viewing and adding tasty brews. Uses [https://github.com/angelodipaolo/brewhapi](brewhapi) as a mock API for fetching and inserting data. brewhapi is freely hosted at [https://brewhapi.herokuapp.com/brews](https://brewhapi.herokuapp.com/brews).
+A ridiculously simple React Native demo app for viewing and adding tasty brews. Uses [brewhapi](https://github.com/angelodipaolo/brewhapi) as a mock API for fetching and inserting data. brewhapi is freely hosted at [https://brewhapi.herokuapp.com/brews](https://brewhapi.herokuapp.com/brews).
 
 
 ## Project Overview
