@@ -52,7 +52,19 @@ class BrewAddView extends React.Component {
     var brewClient = this.state.brewClient
 
     brewClient.insertBrew(brew, () => {
-      this.props.navigator.pop();
+      this.props.navigator.replacePreviousAndPop({
+        title: "Tasty Brews", 
+        component: require("./BrewIndexView"),
+        passProps: {brewClient: this.state.brewClient},
+        rightButtonTitle: "Add Brew",
+        onRightButtonPress: () => {
+          this.refs.mainNavigation.navigator.push({
+            title: "Add Brew",
+            component: require("./views/BrewAddView"),
+            passProps: {brewClient: this.state.brewClient}
+          });
+        }
+      });
     })
   }
 
