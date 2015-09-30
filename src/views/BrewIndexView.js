@@ -81,7 +81,7 @@ class BrewIndexView extends React.Component {
     )
   }
 
-  renderBrewRow(brew, sectionID, rowID) {
+  renderBrewRow(brew) {
     return (
       <TouchableHighlight onPress={this.onBrewTapped.bind(this, brew)}>
         <View style={styles.brewRow}>
