@@ -39,6 +39,10 @@ All of the app JavaScript source code is located in the [`src`](/src) directory.
 - [`/src/http/BrewClient`](/src/http/BrewClient.js) - HTTP client for fetching and inserting brew data with brew API server.
 
 
+### JavaScript Classes
+
+[JavaScript classes](https://facebook.github.io/react/docs/reusable-components.html#es6-classes), introduced in ECMAScript 6, are used in this project to define React component classes.
+
 ### Viewing Brews
 
 The entry point of the app kicks off in the `ReactNativeBrewsApp` component. This component declares a navigator object with its initial route set to load the `BrewIndexView` component.
