@@ -2,10 +2,18 @@
 
 var React = require("react-native");
 var {
-  NavigatorIOS
+  NavigatorIOS,
+  StyleSheet
 } = React;
 
-var styles = require("./styles").styleSheet;
+var styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#000000',
+    marginTop: 15
+  },
+});
+
 var BrewClient = require("./http/BrewClient")
 
 class ReactNativeBrewsApp extends React.Component {

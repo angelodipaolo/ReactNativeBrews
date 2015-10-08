@@ -5,10 +5,30 @@ var {
   Text,
   View,
   ListView,
-  TouchableHighlight
+  TouchableHighlight,
+  StyleSheet
 } = React;
 
-var styles = require("../styles").styleSheet;
+var globalStyles = require("../styles").styleSheet;
+
+var styles = StyleSheet.create({
+  brewRow: {
+    height: 54,
+    borderBottomWidth: 0.5,
+    marginLeft: 15
+  },
+  brewStyle: {
+    textAlign: 'left',
+    paddingTop: 2,
+    color: "#696969"
+  },
+  brewName: {
+    fontSize: 18,
+    textAlign: 'left',
+    color: "#000000",
+    paddingTop: 8,
+  },
+});
 
 /// A view for rendering a list of brews
 class BrewIndexView extends React.Component {
@@ -38,10 +58,7 @@ class BrewIndexView extends React.Component {
 
     brewClient.fetchBrews((brews) => {
       this.setState({
-          dataSource: this
-                        .state
-                        .dataSource
-                        .cloneWithRows(brews),
+          dataSource: this.state.dataSource.cloneWithRows(brews),
           loaded: true,
           brews: brews
         });
@@ -64,7 +81,7 @@ class BrewIndexView extends React.Component {
     if (!this.state.loaded) {
       return (
         <View>
-          <Text style={styles.welcome, styles.text}>
+          <Text style={globalStyles.text}>
             Fetching brews...
           </Text>
         </View>
@@ -76,7 +93,7 @@ class BrewIndexView extends React.Component {
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderBrewRow.bind(this)}
-          style={styles.listView} />
+          style={globalStyles.listView} />
       </View>
     )
   }

@@ -4,10 +4,21 @@ var React = require("react-native");
 var {
   Text,
   View,
-  Navigator,
+  StyleSheet
 } = React;
 
-var styles = require("../styles").styleSheet;
+var styles = StyleSheet.create({
+  brewDetails: {
+    padding: 15,
+    marginTop: 80,
+    fontSize:20
+  },
+  brewStyle: {
+    textAlign: 'left',
+    paddingTop: 2,
+    color: "#696969"
+  },
+});
 
 /// Renders the detail of a brew
 class BrewDetailView extends React.Component {

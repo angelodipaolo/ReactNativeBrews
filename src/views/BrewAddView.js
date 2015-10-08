@@ -7,9 +7,16 @@ var {
   TextInput,
   TouchableHighlight,
   Navigator,
+  StyleSheet
 } = React;
 
-var styles = require("../styles").styleSheet;
+var globalStyles = require("../styles").styleSheet;
+
+var styles = StyleSheet.create({
+  brewAddView: {
+    marginTop: 80
+  },
+});
 
 /// A view for inserting a brew
 class BrewAddView extends React.Component {
@@ -74,22 +81,22 @@ class BrewAddView extends React.Component {
     return (
       <View style={styles.brewAddView}>
         <TextInput
-          style={styles.textInput}
+          style={globalStyles.textInput}
           onChange={this.onBrewNameChange.bind(this)}
           placeholder="brew name"/>
         <TextInput
-          style={styles.textInput}
+          style={globalStyles.textInput}
           onChange={this.onBrewStyleChange.bind(this)}
           placeholder="style"/>
         <TextInput
-          style={styles.textInput}
+          style={globalStyles.textInput}
           onChange={this.onBreweryChange.bind(this)}
           placeholder="brewery"/>
           <TouchableHighlight 
-            style={styles.button}
+            style={globalStyles.button}
             onPress={this.saveTapped.bind(this)}
             >
-            <Text style={styles.buttonText}>Save</Text>
+            <Text style={globalStyles.buttonText}>Save</Text>
           </TouchableHighlight>
       </View>
     );
