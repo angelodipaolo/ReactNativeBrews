@@ -12,6 +12,9 @@ var {
 var globalStyles = require("../styles").styleSheet;
 
 var styles = StyleSheet.create({
+  listView: {
+    backgroundColor: '#CCCCCC',
+  },
   brewRow: {
     height: 54,
     borderBottomWidth: 0.5,
@@ -89,12 +92,10 @@ class BrewIndexView extends React.Component {
     }
 
     return (
-      <View>
         <ListView
           dataSource={this.state.dataSource}
           renderRow={this.renderBrewRow.bind(this)}
-          style={globalStyles.listView} />
-      </View>
+          style={styles.listView} />
     )
   }
 
