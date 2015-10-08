@@ -1,9 +1,8 @@
-var React = require('react-native');
-var {
-  StyleSheet,
-} = React;
+"use strict";
 
-exports.styleSheet = StyleSheet.create({
+var React = require('react-native');
+
+exports.styleSheet = React.StyleSheet.create({
   text: {
     color: "#FFFFFF",
   },
